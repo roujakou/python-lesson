@@ -23,6 +23,7 @@ def get_scores(names, num=10):
                 }
         scores.append(info)
     return scores
+
 def save_csv(students,filename):
     fieldnames = students[0].keys()
     current_dir = os.path.dirname(os.path.abspath("__file__"))
@@ -37,4 +38,4 @@ def save_csv(students,filename):
 names = get_names("names.txt")
 num = int(input("請輸入學生數量:"))
 students = get_scores(names,num=num)
-print(students)
+save_csv(students,'students.csv')
